@@ -72,3 +72,4 @@ a.link-unstyled:hover {
 .btn.btn-danger:not(:disabled):not(.disabled):focus {
   box-shadow: 0000.2remrgba(255, 64, 64, 0.5);
 }
+

@@ -1,0 +1,27 @@
+body,html{
+    margin: 0;
+    padding:0;
+}
+.total{
+    background: url("../../images/stars.svg"), #1b1b25;
+    /* padding-top : 50px;
+    padding-bottom : 3rem; */
+    height: 92vh;
+    display: inline-block;
+    
+}
+
+.texto{
+    color: white;
+}
+
+.astronauts, .platziconflogo{
+    max-width: 100%;
+  height: auto;
+}
+.fila{
+    height: 100%;
+}
+.astronauts{
+    width: 90%;
+}

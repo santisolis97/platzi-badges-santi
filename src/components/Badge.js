@@ -22,7 +22,9 @@ class Badges extends React.Component {
         </div>
         <div className="badge_section-info">
           <h3>{this.props.jobTitle}</h3>
-          <div>{this.props.twitter}</div>
+          <div>{this.props.email}</div>
+          <br /> 
+          <div>@{this.props.twitter}</div>
         </div>
         <div className="badge_footer">#platziconf</div>
       </div>

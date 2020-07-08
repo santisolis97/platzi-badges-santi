@@ -1,31 +1,39 @@
 import React from "react";
-
+import ProgressBar from "react-bootstrap/ProgressBar";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 class BadgeForm extends React.Component {
- state = {};
-//   handleChange = (e) => {
-//     // console.log({
-//     //   name: e.target.name,
-//     //   value: e.target.value,
-//     // });
+  state = {};
+  //   handleChange = (e) => {
+  //     // console.log({
+  //     //   name: e.target.name,
+  //     //   value: e.target.value,
+  //     // });
 
-//     this.setState({ [e.target.name]: e.target.value });
-//   };
+  //     this.setState({ [e.target.name]: e.target.value });
+  //   };
   handleClick = (e) => {
-    console.log("Button was clicked");
+    // document.getElementById("formulario").reset()
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("form was submited");
-    console.log(this.state)
-  };
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("form was submited");
+  //   console.log(this.state)
+  // };
 
   render() {
     return (
       <div>
-        <h1>New Attendant</h1>
-        <form onSubmit={this.handleSubmit}>
-          
+        <div className="row">
+          <div className="col-10"></div>
+          <div className="col-2">
+            <Link to="/badges" className="btn btn-primary">
+              See badges
+            </Link>
+          </div>
+        </div>
+        <form id="formulario" onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -48,7 +56,6 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-
           <div className="form-group">
             <label>Job Title</label>
             <input
@@ -70,7 +77,7 @@ class BadgeForm extends React.Component {
               value={this.props.formValue.email}
             />
           </div>
-          
+
           <div className="form-group">
             <label>Twitter</label>
             <input
@@ -81,14 +88,37 @@ class BadgeForm extends React.Component {
               value={this.props.formValue.twitter}
             />
           </div>
+          <br />
 
-          <button
-            type="submit"
-            onClick={this.handleClick}
-            className="btn btn-primary"
-          >
-            Save!
-          </button>
+          {this.props.bar ? (
+            <ProgressBar label="Success!" variant="success" now={100} />
+          ) : (
+            <ProgressBar variant="success" now={0} />
+          )}
+          <br />
+
+          <div className="row">
+            <div className="col">
+              <button
+                type="submit"
+                onClick={this.handleClick}
+                className="btn btn-primary"
+              >
+                Save!
+              </button>
+            </div>
+            <div className="col">
+              <Button
+                onClick={this.handleClearClick}
+                variant="outline-secondary"
+              >
+                Clear
+              </Button>
+            </div>
+          </div>
+          {this.props.error && (
+            <p className="text-danger py-10 bold">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );

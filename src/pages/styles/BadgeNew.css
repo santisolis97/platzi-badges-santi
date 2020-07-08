@@ -1,8 +1,18 @@
 .BadgeNew_hero {
     width: 100%;
-    padding: 2rem0;
+    padding: 2rem;
     background: url("../../images/stars.svg"), #1b1b25;
     background-repeat: repeat;
     margin-bottom: 1rem;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.BadgeNew_hero-img{
+    max-height: 100px;
+}
+
+.container-new{
+    padding-bottom: 2rem;
 }

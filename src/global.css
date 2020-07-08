@@ -73,3 +73,7 @@ a.link-unstyled:hover {
   box-shadow: 0000.2remrgba(255, 64, 64, 0.5);
 }
 
+.text-danger{
+  padding-top: 10px;
+  font-weight: bold;
+}

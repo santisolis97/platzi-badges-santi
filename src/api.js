@@ -24,11 +24,12 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      // throw new Error("Not Found");
+      //throw new Error("500: Server Error");
       // return [];
       return callApi("/badges");
     },
     create(badge) {
+      // throw new Error('500: Server error')
       return callApi(`/badges`, {
         method: "POST",
         body: JSON.stringify(badge),

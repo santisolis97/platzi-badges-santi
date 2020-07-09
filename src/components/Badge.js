@@ -4,6 +4,10 @@ import "./styles/Badge.css";
 import Gravatar from "react-gravatar"
 
 class Badges extends React.Component {
+componentDidMount(){
+  // console.log(this.props.badgeId);
+}
+
   render() {
     return (
       <div className="badge container-fluid">
@@ -12,12 +16,12 @@ class Badges extends React.Component {
         </div>
         <div className="badge_section-name">
           <Gravatar size={800} default='monsterid' email={this.props.email} className="badge_avatar" />
-          <h1>
+          <h1 className='fullname'>
             {this.props.firstName} <br />
             {this.props.lastName}
           </h1>
         </div>
-        <div className="badge_section-info">
+        <div className="badge_section-info ">
           <h3>{this.props.jobTitle}</h3>
           <div>{this.props.email}</div>
           <br /> 

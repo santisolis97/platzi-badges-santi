@@ -12,12 +12,14 @@ class BadgeEdit extends React.Component {
     loading: true,
     bar: false,
     error: null,
+    badgeId:"",
     form: {
       firstName: "",
       lastName: "",
       email: "",
       jobTitle: "",
       twitter: "",
+      
     },
   };
 
@@ -28,15 +30,13 @@ class BadgeEdit extends React.Component {
     this.setState({ loading: true, error: null });
     try {
       const data = await api.badges.read(this.props.match.params.badgeId);
-      this.setState({ loading: false, form: data });
+      this.setState({ loading: false, form: data});
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
 
   handleChange = (e) => {
-    // const nextForm = this.state.form;
-    // nextForm[e.target.name] = e.target.value;
     this.setState({
       form: {
         ...this.state.form,
@@ -49,8 +49,9 @@ class BadgeEdit extends React.Component {
     e.preventDefault();
     this.setState({ loading: true, error: null });
     try {
+      
       await api.badges.update(this.props.match.params.badgeId, this.state.form);
-      this.setState({ loading: false, bar: true });
+      this.setState({ loading: false, bar: true,  });
       this.props.history.push("/badges");
     } catch (error) {
       this.setState({ loading: false, error: error });
@@ -74,6 +75,7 @@ class BadgeEdit extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-6">
+              {/* <h1>{this.state.form.badgeId}</h1> */}
               <Badge
                 firstName={this.state.form.firstName || "First Name"}
                 lastName={this.state.form.lastName || "Last Name"}

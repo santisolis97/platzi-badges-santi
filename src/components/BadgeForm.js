@@ -1,6 +1,6 @@
 import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 class BadgeForm extends React.Component {
   state = {};
@@ -25,14 +25,7 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col-10"></div>
-          <div className="col-2">
-            <Link to="/badges" className="btn btn-primary">
-              See badges
-            </Link>
-          </div>
-        </div>
+
         <form id="formulario" onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>

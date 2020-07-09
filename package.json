@@ -14,13 +14,14 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "gravatar": "^1.8.0",
-    "react": "16.8.3",
+    "react": "^16.8.3",
     "react-bootstrap": "^1.1.1",
-    "react-dom": "16.8.3",
+    "react-dom": "^16.8.3",
     "react-gravatar": "^2.6.3",
     "react-loading-skeleton": "^2.1.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "reactstrap": "^8.5.1"
   },
   "devDependencies": {
     "faker": "^4.1.0",
